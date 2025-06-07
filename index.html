@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agenda Digital</h1>
+        <nav>
+            <button id="addPersonBtn">Agregar Persona</button>
+            <button id="searchPersonBtn">Buscar Persona</button>
+            <button id="listPeopleBtn">Listar Personas</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="addPersonSection">
+            <h2>Agregar Nueva Persona</h2>
+            <form id="addPersonForm">
+                <label for="document">Número de Identificación:</label>
+                <input type="text" id="document" required>
+
+                <label for="names">Nombres:</label>
+                <input type="text" id="names" required>
+
+                <label for="lastnames">Apellidos:</label>
+                <input type="text" id="lastnames" required>
+
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" required>
+
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+            <p id="addPersonMessage" class="message"></p>
+        </section>
+
+        <section id="searchPersonSection" class="hidden">
+            <h2>Buscar Persona</h2>
+            <form id="searchPersonForm">
+                <label for="searchType">Buscar por:</label>
+                <select id="searchType">
+                    <option value="document">Número de Identificación</option>
+                    <option value="names">Nombres</option>
+                    <option value="lastnames">Apellidos</option>
+                </select>
+                <input type="text" id="searchValue" placeholder="Ingresa el valor a buscar">
+                <button type="submit">Buscar</button>
+            </form>
+            <div id="searchResults">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchResultsBody">
+                        </tbody>
+                </table>
+                <p id="noResultsMessage" class="message hidden">No se encontraron resultados.</p>
+            </div>
+        </section>
+
+        <section id="listPeopleSection" class="hidden">
+            <h2>Listado de Personas</h2>
+            <button id="loadListBtn">Cargar Lista</button>
+            <div id="peopleList">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="peopleListBody">
+                        </tbody>
+                </table>
+                <p id="emptyListMessage" class="message hidden">No hay personas registradas.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
